@@ -1,0 +1,17 @@
+{
+  "name": "svg-generator",
+  "version": "1.0.0",
+  "description": "An application that is run on the terminal that will be able to create an svg file based on user input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
