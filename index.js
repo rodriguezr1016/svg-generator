@@ -1,6 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const path = require('path')
+const { Triangle, Square, Circle } = require("./lib/shapes");
 const questions = [
 {   type: "input",
     name: "shape",
