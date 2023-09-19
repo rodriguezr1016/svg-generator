@@ -2,9 +2,10 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const { Triangle, Square, Circle } = require("./lib/shapes");
 const questions = [
-{   type: "input",
+{   type: "list",
     name: "shape",
     message: "What shape would you like to use?",
+    choices: ["Square", "Circle", "Triangle"]
 },
 {
     type: "input",
@@ -24,6 +25,7 @@ const questions = [
 ]
 
 function writeToFile(fileName, responses) {
+  console.log(responses.shape)
     let svgString = "";
     svgString =
     '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
@@ -36,9 +38,11 @@ function writeToFile(fileName, responses) {
   } else if (responses.shape === "Square") {
     shapeChoice = new Square();
     svgString += `<rect x="73" y="40" width="160" height="160" fill="${responses.color}"/>`;
-  } else {
+  } else if(responses.shape === "Circle"){
     shapeChoice = new Circle();
     svgString += `<circle cx="150" cy="115" r="80" fill="${responses.color}"/>`;
+  }else{
+    console.log("lol")
   }
   svgString += `<text x="150" y="130" text-anchor="middle" font-size="40" fill="${responses.textColor}">${responses.text}</text>`;
   svgString += "</g>";
